@@ -29,6 +29,11 @@ public class Exemplo4 {
         } finally {
             System.out.println("Bloco finally foi executado");
         }
+        
+        /*
+        O finally é SEMPRE executado no final desse processo, independente se o catch for bem sucedido ou não
+        */
+        
     }
 }
 

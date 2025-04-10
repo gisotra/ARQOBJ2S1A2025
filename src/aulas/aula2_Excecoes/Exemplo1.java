@@ -16,8 +16,8 @@ public class Exemplo1 {
         //exceções em java são erros, são coisas que sucederam de forma inesperada
         //tratamos de exceções para tornar o software resiliente aos erros
         
-        System.out.println( vetor[4] );
-        System.out.println( vetor[5] ); //ArrayIndexOutOfBoundsException
+        System.out.println( vetor[4] ); //NUllPointerException, ele não foi preenchido
+        System.out.println( vetor[5] ); //ArrayIndexOutOfBoundsException porque ele NÃO EXISTE
     }
     
 }
