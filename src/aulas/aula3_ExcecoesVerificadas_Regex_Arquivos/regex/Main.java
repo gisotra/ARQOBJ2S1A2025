@@ -1,4 +1,4 @@
-package aulas.aula3_ExcecoesVerificadas.regex;
+package aulas.aula3_ExcecoesVerificadas_Regex_Arquivos.regex;
 
 public class Main {
     public static void main(String[] args) {
@@ -39,6 +39,5 @@ public class Main {
         str = "Bb"; //true
         regex = "[a-zA-Z]+";
         System.out.println(str + " | " + regex + " | " + str.matches(regex));
-                
     }
 }

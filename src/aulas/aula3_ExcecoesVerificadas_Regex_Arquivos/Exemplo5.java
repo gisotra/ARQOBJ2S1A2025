@@ -1,4 +1,4 @@
-package aulas.aula3_ExcecoesVerificadas;
+package aulas.aula3_ExcecoesVerificadas_Regex_Arquivos;
 
 public class Exemplo5 {
     public static void main(String[] args) {
