@@ -1,0 +1,15 @@
+<projetos_da_empresa>
+        
+    <Projeto Local="Santo André" nome="Produto X">
+                
+        <Trabalhador cpf="123-123-123-12" nome="Silvia">gerente de projeto</Trabalhador>
+            
+    </Projeto>
+    
+    <pai_2 atribute2="value" atributo1="value">
+        <filho atributo1="value" atributo2="value">conteudo</filho>
+        <filho atributo1="value" atributo2="value">
+            <filho atributo1="value" atributo2="value">conteudo</filho>
+        </filho>
+    </pai_2>
+</projetos_da_empresa>
