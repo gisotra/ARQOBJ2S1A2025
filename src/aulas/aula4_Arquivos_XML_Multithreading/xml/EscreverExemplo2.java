@@ -14,13 +14,13 @@ import javax.xml.transform.stream.StreamResult;
 public class EscreverExemplo2 {
     public static void main(String[] args) throws Exception  {
         
-        // Cria um documento carregando um XML existente
+        // carrega um documento XML
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docFactory.newDocumentBuilder();        
         Document doc = docBuilder.parse( new File("./Arquivo4.xml") );
         doc.getDocumentElement().normalize();
         
-        // Elemento raiz
+        // raiz
         Element raiz = doc.getDocumentElement();
         
         // elements

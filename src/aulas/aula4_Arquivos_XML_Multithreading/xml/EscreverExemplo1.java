@@ -20,18 +20,17 @@ public class EscreverExemplo1 {
         
         // nó raiz
         Element raiz = doc.createElement( "projetos_da_empresa" );
-        
         doc.appendChild(raiz);
         
         // nós
-        Element element1 = doc.createElement( "Projeto" );
+        Element element1 = doc.createElement( "projeto" );
         element1.setAttribute("nome", "Produto X");
         element1.setAttribute("Local", "Santo André");
 //        element1.setTextContent( "conteudo" );
         
         Element element2 = doc.createElement( "Trabalhador" );
         element2.setAttribute("nome", "Silvia");
-        element2.setAttribute("cpf", "123-123-123-12");
+        element2.setAttribute("cpf", "555.555.555-55");
         element2.setTextContent( "gerente de projeto" );
         
         element1.appendChild( element2 );        
@@ -52,3 +51,4 @@ public class EscreverExemplo1 {
         
     }
 }
+

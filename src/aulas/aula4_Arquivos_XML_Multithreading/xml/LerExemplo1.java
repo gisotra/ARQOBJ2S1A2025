@@ -12,7 +12,7 @@ import org.w3c.dom.NodeList;
 public class LerExemplo1 {
     public static void main(String[] args) throws Exception  {
         
-        // Carrega um documento xml
+        // carrega um documento XML
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docFactory.newDocumentBuilder();        
         Document doc = docBuilder.parse( new File("./Arquivo4.xml") );
@@ -22,7 +22,7 @@ public class LerExemplo1 {
         Element raiz = doc.getDocumentElement();
         System.out.println( "nome da tag '" + raiz.getNodeName() + "'" );
         
-        
+        // imprimir todos os nós do elemento raiz
         if ( raiz.hasChildNodes() ) {
             
             NodeList lista = raiz.getChildNodes();

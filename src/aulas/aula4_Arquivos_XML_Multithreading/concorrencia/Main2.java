@@ -6,12 +6,12 @@ import java.util.concurrent.TimeUnit;
 
 public class Main2 {
     public static void main(String[] args) {
+        
         Fila fila = new Fila(10);
         System.out.println(fila);
         
-        // objetos do tipo Escrever
-        Escrever pares = new Escrever(0, 2, 8, 500, fila);
-        Escrever impares = new Escrever(1, 2, 9, 1500, fila);
+        Escrever pares = new Escrever(2, 2, 10, 1500, fila);
+        Escrever impares = new Escrever(1, 2, 9, 500, fila);
         
         ExecutorService executorThreads = Executors.newCachedThreadPool();
         
@@ -20,15 +20,14 @@ public class Main2 {
         
         executorThreads.shutdown();
         
-        try{
-        
-        executorThreads.awaitTermination(15, TimeUnit.SECONDS);
-        
-        System.out.println(fila);
-        
+        try {
+            
+            executorThreads.awaitTermination(15, TimeUnit.SECONDS);
+            System.out.println(fila);
+            
         } catch(InterruptedException ex) {
             ex.printStackTrace();
         }
         
-        }
+    }
 }

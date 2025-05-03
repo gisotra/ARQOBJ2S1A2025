@@ -5,27 +5,28 @@ import java.util.concurrent.Executors;
 
 public class Main1 {
     public static void main(String[] args) {
+        
         Imprimir pares = new Imprimir(0, 2, 50, 750);
-        Imprimir impares = new Imprimir(1, 2, 10, 1500);
+        Imprimir impares = new Imprimir(1, 2, 50, 1500);
         
-        /*
-        pares.run();
-        impares.run();
-        
-        Thread Thread1 = new Thread(pares);
-        Thread Thread2 = new Thread(impares);
-        
-        Thread1.start();
-        Thread2.start(); */
-        
+//        pares.run();
+//        impares.run();
+
+//        Thread thread1 = new Thread(pares);
+//        Thread thread2 = new Thread(impares);
+//        
+//        thread1.start();
+//        thread2.start();
+
         ExecutorService executorThreads = Executors.newCachedThreadPool();
         
         executorThreads.execute(pares);
         executorThreads.execute(impares);
         
+        // para encerrar as threads quando as tarefas forem executadas
         executorThreads.shutdown();
         
+        System.out.println("fim do main."); 
         
-        System.out.println("Fim do main.");
     }
 }
