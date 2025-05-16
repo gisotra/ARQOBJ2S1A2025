@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Ex6 {
     public ArrayList<Integer> lista;
     
-    public Ex6(){
+    public Ex6(){ //construtor
         lista = new ArrayList<Integer>();
     }
     
@@ -16,16 +16,18 @@ public class Ex6 {
         return true;
     }
     
-    public void verificaRepeticoes(){
+    public void verificaRepetidos(){
+        int check;
         for(int i = 0; i < lista.size(); i++){
-            int check = lista.get(i);
-            for(int j = i + 1; j < lista.size(); j++){
-                if(check == lista.get(j)){ //há uma repetição
-                    throw new RuntimeException("Tem numeros duplicados: " + check);
+            check = lista.get(i);
+            for(int j = 0; j < lista.size(); j++){
+                if(lista.get(j) == check){
+                    throw new RuntimeException("Existe numero repetido");
                 }
             }
         }
     }
+
     
 }
 

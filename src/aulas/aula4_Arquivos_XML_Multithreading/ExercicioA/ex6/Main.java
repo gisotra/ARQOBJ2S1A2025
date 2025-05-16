@@ -7,13 +7,9 @@ public class Main {
         e.adicionar(2);
         e.adicionar(7);
         e.adicionar(124);
-        e.adicionar(14);
         e.adicionar(-2);
         
-        try{
-            e.verificaRepeticoes();
-        } catch (RuntimeException ex){
-            System.out.println("Erro: " + ex.getMessage());
-        }
+            e.verificaRepetidos();
+
     }
 }
