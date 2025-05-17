@@ -9,56 +9,62 @@ como argumento uma string e retorna o número de ocorrências desta string na li
 sulada (retornando zero caso a palavra não exista na lista).
  */
 package aulas.aula6_colecoes.exAula.cap12.ex16;
-
-import java.util.Scanner;
+import java.util.Scanner; //usar somente no main
 import java.util.HashMap;
 import java.util.Map;
-
 public class ListaDePalavras {
-    
- 
-    /*public static int verificaPalavra(String p, int contador){ // nao preciso de instancia 
-        String regexTemporaria = p;
-        
-            for(int i = 0; i < contador; i++){
-                
+  
+    private static Map<String,Integer> LP = new HashMap<>(); //por ser estático, não preciso de uma instancia da classe
+
+        public static void addPalavra(String word){
+            //adicionar já validando as repetições para o método futuro
+            if(contemPalavra(word)){ 
+                Integer inteiro = LP.get(word); //recebo o valor INTEGER condizente com aquela chave
+                if(inteiro == null){ //caso esse valor seja nulo, é a primeira vez que essa palavra está sendo adicionada
+                    LP.put(word, 1);
+                } else { //palavra REPETIDA
+                    LP.put(word, inteiro + 1); //adiciono um indice condizente com as REPETIÇÕES
+                }
             }
+        }
     
-    }*/
-    
-    public static void main(String[] args) {
+        public static boolean contemPalavra(String word){
+            return LP.containsKey(word);
+        }
         
-        // chave    | valor
-        // indice   | list de palavras
-        Map<Integer,String> LP = new HashMap<>();
-        Scanner reader = new Scanner(System.in);
-        
-        boolean isWord = true;
-        String regex = ".*\\d+.*";
-        int index = 0;
-        
-        do{ 
-            String word;
-            System.out.println("Informe uma palavra: ");
-            word = reader.nextLine();
-            if(word.matches(regex)){
-                System.out.println("Nao pode adicionar numero numa lista de palavras");
-                break;
+        public static int numRepeticoes(String word){
+            if(LP.get(word) != null){ //ela apareceu na lista
+                return LP.get(word);
             } else {
-                index++;
-                LP.put(index, word);
-            }
-        } while(isWord);
+                return 0; //a palavra nem apareceu no meu mapa
+            }   
+        }
         
-        System.out.println(LP);
+        @Override
+        public String toString(){
+            return LP.keySet().toString();
+        }
         
-        /*
-        System.out.println("procure a palavra repetida: ");
-        String search = reader.nextLine();
-        System.out.println(verificaPalavra(search, index));
-        */
+        public static void main(String[] args) {
+            Scanner reader = new Scanner(System.in);
+            boolean isWord = true;
+            String regex = ".*\\d+.*";
+
+            do {
+                String word;
+                System.out.println("Informe uma palavra: ");
+                word = reader.nextLine();
+                if (word.matches(regex)) {
+                    System.out.println("Nao pode adicionar numero numa lista de palavras");
+                    break;
+                } else {
+                    addPalavra(word);
+                }
+            } while (isWord);
+        
+            System.out.println(LP);
         
         
-       
-    }
+        
+        }
 }

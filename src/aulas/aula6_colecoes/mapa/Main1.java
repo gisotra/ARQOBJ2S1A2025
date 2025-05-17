@@ -22,9 +22,9 @@ public class Main1 {
         }
         
         System.out.println("--------- sobrescrever o joao- ------");
-        notas.put("Joao", 10.0);
+        notas.put("Joao", 10.0); //adicionar
         
-                for(String chave : notas.keySet() ){
+                for(String chave : notas.keySet() ){ //keySet: retorna todas as chaves daquele mapa
             double valor = notas.get(chave);
             System.out.println( chave + " : " + valor);
         }
