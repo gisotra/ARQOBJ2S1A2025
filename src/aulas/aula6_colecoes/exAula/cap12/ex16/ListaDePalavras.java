@@ -10,28 +10,22 @@ sulada (retornando zero caso a palavra não exista na lista).
  */
 package aulas.aula6_colecoes.exAula.cap12.ex16;
 import java.util.Scanner; //usar somente no main
-import java.util.HashMap;
+import java.util.HashMap; 
 import java.util.Map;
 public class ListaDePalavras {
-  
+    //                 chave | valor    
     private static Map<String,Integer> LP = new HashMap<>(); //por ser estático, não preciso de uma instancia da classe
 
         public static void addPalavra(String word){
             //adicionar já validando as repetições para o método futuro
-            if(contemPalavra(word)){ 
                 Integer inteiro = LP.get(word); //recebo o valor INTEGER condizente com aquela chave
                 if(inteiro == null){ //caso esse valor seja nulo, é a primeira vez que essa palavra está sendo adicionada
                     LP.put(word, 1);
                 } else { //palavra REPETIDA
                     LP.put(word, inteiro + 1); //adiciono um indice condizente com as REPETIÇÕES
                 }
-            }
         }
     
-        public static boolean contemPalavra(String word){
-            return LP.containsKey(word);
-        }
-        
         public static int numRepeticoes(String word){
             if(LP.get(word) != null){ //ela apareceu na lista
                 return LP.get(word);
@@ -45,6 +39,8 @@ public class ListaDePalavras {
             return LP.keySet().toString();
         }
         
+        
+/*----------------------------------------------------------------*/
         public static void main(String[] args) {
             Scanner reader = new Scanner(System.in);
             boolean isWord = true;
@@ -63,8 +59,5 @@ public class ListaDePalavras {
             } while (isWord);
         
             System.out.println(LP);
-        
-        
-        
         }
 }
