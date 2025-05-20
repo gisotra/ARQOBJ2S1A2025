@@ -11,8 +11,12 @@ import java.util.Scanner;
 
 public class Ex22 {
     
-    public static void eliminaRepetidos(List<String> L){
-      
+    public static void eliminaRepetidos(List<String> L, List<String> LPnR){
+      for( String Laux : L){
+          if(!LPnR.contains(Laux)){
+              LPnR.add(Laux);
+          }
+      }
     }
     
     public static boolean addPalavra(List<String> L, String word){
@@ -27,6 +31,7 @@ public class Ex22 {
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
         List<String> LP = new ArrayList();
+        List<String> LPnR = new ArrayList(); //arraylist auxiliar
         boolean index = true;
         
         do{
@@ -40,7 +45,10 @@ public class Ex22 {
             }
         }while(index);
         
-        System.out.println(LP);
+        eliminaRepetidos(LP, LPnR);
+        
+        System.out.println("List com repeticoes: " + LP);
+        System.out.println("List sem repeticoes: " + LPnR);
         
         
     }
